@@ -17,15 +17,15 @@ class Item(models.Model):
 class Purchase(models.Model):
     """ A model that represents purchases of items with a purchase date and whether or not it was shipped """
     item = models.ForeignKey(Item, on_delete=models.CASCADE)
+    amount = models.IntegerField(default=0)
+   # purchaser = models.ForeignKey('auth.User', on_delete=models.CASCADE, default='Anonymous')
     purchase_date = models.DateTimeField(auto_now_add=True)
     shipped = models.BooleanField(default=False)
-
     def __str__(self):
-        return self.item.name
+            return self.item.name
 
 class ItemCollection(models.Model):
     """ A collection of multiple items connected to a user """
-    user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     items = models.ManyToManyField(Item)
 
     def __str__(self):

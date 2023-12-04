@@ -1,5 +1,14 @@
 <!-- list a detail of an item -->
 
-<h1> {{ item.name }}</h1>
-<p> {{ item.description }}</p>
-<p> {{ item.price }}</p>
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+    </tr>
+    <tr>
+        <td>{{ item.name }}</td>
+        <td>{{ item.description }}</td>
+        <td>{{ item.price }}</td>
+    </tr>
+</table>

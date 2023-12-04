@@ -26,6 +26,7 @@ urlpatterns = [
     #path('users/', include(router.urls)),
     path('', include('rest_auth.urls')),
     path('registration/', include('rest_auth.registration.urls')),
+    path('userviewset/', UserViewSet.as_view({'get': 'list'}), name='userviewset'),
     # facebook rest-auth
-    path('rest-auth/facebook/', FacebookLogin.as_view(), name='fb_login'),
+    #path('rest-auth/facebook/', FacebookLogin.as_view(), name='fb_login'),
 ]

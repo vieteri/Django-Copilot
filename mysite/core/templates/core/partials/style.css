@@ -1,0 +1,43 @@
+/* FILEPATH */
+
+/**
+ * This code snippet demonstrates how to use Bootstrap in your HTML project.
+ * 
+ * To use Bootstrap, follow these steps:
+ * 
+ * 1. Include the Bootstrap CSS file in the head section of your HTML file:
+ *    <link rel="stylesheet" href="path/to/bootstrap.css">
+ * 
+ * 2. Include the Bootstrap JavaScript file at the end of the body section of your HTML file:
+ *    <script src="path/to/bootstrap.js"></script>
+ * 
+ * 3. Use the Bootstrap classes and components in your HTML markup to style and enhance your content.
+ *    For example, you can use the "btn" class to create a styled button:
+ *    <button class="btn btn-primary">Click me</button>
+ * 
+ * For more information and examples, refer to the Bootstrap documentation: 
+ * https://getbootstrap.com/docs/
+ */
+
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css');
+
+/* Your custom CSS code goes here */
+/* Style for index.html */
+body {
+    background-color: #f8f9fa;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+h1 {
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+p {
+    color: #666;
+    font-size: 16px;
+}
