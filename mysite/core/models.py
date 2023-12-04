@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 
 class Item(models.Model):
@@ -18,7 +18,7 @@ class Purchase(models.Model):
     """ A model that represents purchases of items with a purchase date and whether or not it was shipped """
     item = models.ForeignKey(Item, on_delete=models.CASCADE)
     amount = models.IntegerField(default=0)
-   # purchaser = models.ForeignKey('auth.User', on_delete=models.CASCADE, default='Anonymous')
+    purchaser = models.ForeignKey('auth.User', on_delete=models.CASCADE, default='1')
     purchase_date = models.DateTimeField(auto_now_add=True)
     shipped = models.BooleanField(default=False)
     def __str__(self):
@@ -30,3 +30,4 @@ class ItemCollection(models.Model):
 
     def __str__(self):
         return self.user.username
+    

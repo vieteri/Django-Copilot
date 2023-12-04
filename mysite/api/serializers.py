@@ -13,6 +13,8 @@ class PurchaseSerializer(serializers.ModelSerializer):
     """ a serializer for the Purchase model """
 
     item = serializers.PrimaryKeyRelatedField(queryset=Item.objects.all())
+    # set purchaser to be the current user
+    purchaser = serializers.PrimaryKeyRelatedField(queryset=User.objects.all(), default=serializers.CurrentUserDefault())
     class Meta:
         model = Purchase
-        fields = ('id', 'item', 'amount','purchase_date', 'shipped')
+        fields = ('id', 'item', 'amount', 'purchaser','purchase_date', 'shipped')
